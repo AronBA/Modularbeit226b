@@ -4,23 +4,24 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
 
-public class Gui extends JFrame {
+public class GuiCalculator extends JFrame {
     private int h = 600;
     private int w = 1000;
 
     JLabel title = new JLabel();
 
 
-    Gui() {
+    GuiCalculator() {
 
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         InputStream input = classLoader.getResourceAsStream("logo.png");
 
+
         BufferedImage image = null;
         try {
             image = ImageIO.read(input);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
