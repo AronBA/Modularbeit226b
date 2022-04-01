@@ -1,11 +1,13 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class GuiCalculator extends JFrame {
+public class GuiCalculator extends JFrame implements ActionListener{
     private int h = 600;
     private int w = 1000;
 
@@ -36,13 +38,26 @@ public class GuiCalculator extends JFrame {
         title.setHorizontalTextPosition(JLabel.RIGHT);
         title.setVerticalTextPosition(JLabel.CENTER);
 
-        String[] optionsToChoose = {"WoodSword", "StoneSword", "IronSword", "GoldSword", "DiamondSword","NetheriteSword"};
+        String[] weapons = {"WoodSword", "StoneSword", "IronSword", "GoldSword", "DiamondSword","NetheriteSword"};
 
-        JComboBox<String> weapon = new JComboBox<>(optionsToChoose);
+        JComboBox<String> weapon = new JComboBox<>(weapons);
         weapon.setBounds(80, 50, 140, 20);
 
+        String[] armors = {"noArmor","LeatherArmor", "ChainmailArmor", "IronArmor", "GoldArmor", "DiamondArmor","NetheriteArmor"};
+
+        JComboBox<String> armor = new JComboBox<>(armors);
+        armor.setBounds(80, 50, 140, 20);
+
+        Integer[] sharpness = {0,1,2,3,4,5};
+
+        JComboBox<Integer> sharp = new JComboBox<>(sharpness);
+        sharp.setBounds(80, 50, 140, 20);
 
 
+        JComboBox<Integer> prot = new JComboBox<>(sharpness);
+        weapon.setBounds(80, 50, 140, 20);
+
+        JButton submit = new JButton("Calculate!");
 
         this.setTitle("Calculator");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -55,22 +70,43 @@ public class GuiCalculator extends JFrame {
         this.add(title);
         this.add(new JPanel());
         this.add(new JPanel());
-        this.add(new JLabel("X"));
+        this.add(new JPanel());
         this.add(weapon);
-        this.add(new JLabel("X"));
-        this.add(new JButton("Effects"));
-        this.add(new JButton("Armor"));
-        this.add(new JLabel("X"));
-        this.add(new JButton("Enchantments"));
-        this.add(new JLabel("X"));
-        this.add(new JButton("Effects"));
+        this.add(new JPanel());
+        this.add(armor);
         this.add(new JPanel());
         this.add(new JPanel());
-        this.add(new JButton("Calculate!"));
+        this.add(sharp);
+        this.add(new JPanel());
+        this.add(prot);
+        this.add(new JPanel());
+        this.add(new JPanel());
+        this.add(new JPanel());
+        this.add(submit);
         this.add(new JPanel());
         this.add(new JPanel());
 
         this.setVisible(true);
+
+        submit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String sword1 = weapon.getItemAt(weapon.getSelectedIndex());
+                int slvl1 = sharp.getItemAt(sharp.getSelectedIndex());
+                String armor1 = armor.getItemAt(armor.getSelectedIndex());
+                int alvl1 = prot.getItemAt(prot.getSelectedIndex());
+
+                Calculation cal = new Calculation(sword1,slvl1,armor1,alvl1);
+
+
+
+            }
+        });
+
+
+
+
+
 
     }
 
@@ -80,5 +116,10 @@ public class GuiCalculator extends JFrame {
 
     public int getW() {
         return w;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
     }
 }

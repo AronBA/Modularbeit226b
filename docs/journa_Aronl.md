@@ -9,4 +9,12 @@ Heute haben ich mit dem Design der GuiCalculator's angefangen. Um eine ungefärh
 ## 25/03/2022
 Heute habe ich angefangen das GuiCalculator zu Programmieren. Da ich heute alleine arbeiten muss konnte ich sehr effizient arbeiten. Zuerst gab es Probleme weil ich vergessen habe `this.setVisible(true);` auf true zu stellen. Dadurch konnte ich das GuiCalculator nicht sehen und dachte es funktioniert nicht. Später bin ich noch auf ein anderes Problem gestossen. Als ich mein Label darstellen wollte, ist mir aufgefallen das es manchmal einfach nicht angezeigt wird. Durch ein wenig recherche habe ich herausgefunden wo das Problem lag. `this.setVisible(true);` muss zwingen am ende stehen. Ansonsten kann es sein das eineige Labels nicht mehr geladen werden. 
 
+---
+## 01/04/2022
+Heute habe ich mit dem berechnen angefangen:
+- formel suchen
+- formel macht probleme
+- fix gefunden
+- gefixxt 
+- resultat gui angefangen
 
