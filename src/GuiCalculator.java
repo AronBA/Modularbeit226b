@@ -36,6 +36,13 @@ public class GuiCalculator extends JFrame {
         title.setHorizontalTextPosition(JLabel.RIGHT);
         title.setVerticalTextPosition(JLabel.CENTER);
 
+        String[] optionsToChoose = {"WoodSword", "StoneSword", "IronSword", "GoldSword", "DiamondSword","NetheriteSword"};
+
+        JComboBox<String> weapon = new JComboBox<>(optionsToChoose);
+        weapon.setBounds(80, 50, 140, 20);
+
+
+
 
         this.setTitle("Calculator");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -48,9 +55,8 @@ public class GuiCalculator extends JFrame {
         this.add(title);
         this.add(new JPanel());
         this.add(new JPanel());
-        this.add(new JButton("Weapon"));
         this.add(new JLabel("X"));
-        this.add(new JButton("Enchantments"));
+        this.add(weapon);
         this.add(new JLabel("X"));
         this.add(new JButton("Effects"));
         this.add(new JButton("Armor"));
