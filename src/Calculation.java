@@ -49,10 +49,16 @@ public class Calculation {
         }
 
 
-        double result = weapondamage * (1-Math.min(20, Math.max(defensepoints/5, defensepoints-(4*weapondamage/(thougness+8)))/25)) * 1-(alvl/25);
 
 
-        GuiResult resultGui = new GuiResult(result);
+        double damage = weapondamage * (1-Math.min(20, Math.max(defensepoints/5, defensepoints-(4*weapondamage/(thougness+8)))/25)) * 1-(alvl/25);
+
+        double[] data = {damage,weapondamage,defensepoints,thougness,alvl,slvl};
+
+        double result = Math.round(damage * 2.0) / 4.0;
+
+        GuiResult resultGui = new GuiResult(result, data);
+
 
 
 

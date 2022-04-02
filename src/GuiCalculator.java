@@ -1,3 +1,5 @@
+import com.formdev.flatlaf.intellijthemes.FlatArcOrangeIJTheme;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -11,24 +13,38 @@ public class GuiCalculator extends JFrame implements ActionListener{
     private int h = 600;
     private int w = 1000;
 
+
     JLabel title = new JLabel();
 
 
     GuiCalculator() {
 
+
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         InputStream input = classLoader.getResourceAsStream("logo.png");
+        InputStream input1 = classLoader.getResourceAsStream("sword.png");
+        InputStream input2 = classLoader.getResourceAsStream("chest.png");
 
 
         BufferedImage image = null;
+        BufferedImage image1 = null;
+        BufferedImage image2 = null;
         try {
             image = ImageIO.read(input);
+            image1 = ImageIO.read(input1);
+            image2 = ImageIO.read(input2);
 
         } catch (IOException e) {
             e.printStackTrace();
         }
         Image newimg = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
         ImageIcon icon = new ImageIcon(newimg);
+
+        Image newimg1 = image1.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
+        ImageIcon icon1 = new ImageIcon(newimg1);
+
+        Image newimg2 = image2.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
+        ImageIcon icon2 = new ImageIcon(newimg2);
 
         title.setText("Calculator");
         title.setFont(new Font("Arial", Font.BOLD,20));
@@ -38,30 +54,25 @@ public class GuiCalculator extends JFrame implements ActionListener{
         title.setHorizontalTextPosition(JLabel.RIGHT);
         title.setVerticalTextPosition(JLabel.CENTER);
 
-        String[] weapons = {"WoodSword", "StoneSword", "IronSword", "GoldSword", "DiamondSword","NetheriteSword"};
+        JButton weapon = new JButton();
+        weapon.setFont(new Font("Arial", Font.BOLD,20));
+        weapon.setText("Weapon");
+        weapon.setIcon(icon1);
 
-        JComboBox<String> weapon = new JComboBox<>(weapons);
-        weapon.setBounds(80, 50, 140, 20);
-
-        String[] armors = {"noArmor","LeatherArmor", "ChainmailArmor", "IronArmor", "GoldArmor", "DiamondArmor","NetheriteArmor"};
-
-        JComboBox<String> armor = new JComboBox<>(armors);
-        armor.setBounds(80, 50, 140, 20);
-
-        Integer[] sharpness = {0,1,2,3,4,5};
-
-        JComboBox<Integer> sharp = new JComboBox<>(sharpness);
-        sharp.setBounds(80, 50, 140, 20);
+        JButton armor = new JButton();
+        armor.setFont(new Font("Arial", Font.BOLD,20));
+        armor.setText("Armor");
+        armor.setIcon(icon2);
 
 
-        JComboBox<Integer> prot = new JComboBox<>(sharpness);
-        weapon.setBounds(80, 50, 140, 20);
 
         JButton submit = new JButton("Calculate!");
+        submit.setFont(new Font("Arial", Font.BOLD,20));
+
 
         this.setTitle("Calculator");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setLayout(new GridLayout(4,5,20,20));
+        this.setLayout(new GridLayout(3,5,10,10));
         this.setSize(getW(), getH());
         this.setResizable(false);
         this.setIconImage(image);
@@ -76,28 +87,17 @@ public class GuiCalculator extends JFrame implements ActionListener{
         this.add(armor);
         this.add(new JPanel());
         this.add(new JPanel());
-        this.add(sharp);
-        this.add(new JPanel());
-        this.add(prot);
-        this.add(new JPanel());
-        this.add(new JPanel());
         this.add(new JPanel());
         this.add(submit);
         this.add(new JPanel());
         this.add(new JPanel());
+
 
         this.setVisible(true);
 
         submit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String sword1 = weapon.getItemAt(weapon.getSelectedIndex());
-                int slvl1 = sharp.getItemAt(sharp.getSelectedIndex());
-                String armor1 = armor.getItemAt(armor.getSelectedIndex());
-                int alvl1 = prot.getItemAt(prot.getSelectedIndex());
-
-                Calculation cal = new Calculation(sword1,slvl1,armor1,alvl1);
-
 
 
             }

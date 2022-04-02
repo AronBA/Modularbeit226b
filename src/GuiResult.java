@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Arrays;
 
 public class GuiResult extends JFrame implements ActionListener  {
     private int h = 600;
@@ -15,10 +14,10 @@ public class GuiResult extends JFrame implements ActionListener  {
     JLabel title = new JLabel();
     JLabel result = new JLabel();
 
-    GuiResult(double results) {
+    GuiResult(double results, double[] data) {
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         InputStream input = classLoader.getResourceAsStream("logo.png");
-        InputStream input2 = classLoader.getResourceAsStream("Heart.png");
+        InputStream input2 = classLoader.getResourceAsStream("heart.png");
 
 
 
