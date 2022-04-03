@@ -14,7 +14,7 @@ public class GuiResult extends JFrame implements ActionListener  {
     JLabel title = new JLabel();
     JLabel result = new JLabel();
 
-    GuiResult(double results, double[] data) {
+    GuiResult(double results) {
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         InputStream input = classLoader.getResourceAsStream("logo.png");
         InputStream input2 = classLoader.getResourceAsStream("heart.png");
@@ -54,7 +54,7 @@ public class GuiResult extends JFrame implements ActionListener  {
 
 
         this.setTitle("Calculator");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         this.setLayout(new GridLayout(2,1,20,20));
         this.setSize(getW(), getH());
         this.setResizable(false);

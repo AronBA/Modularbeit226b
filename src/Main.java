@@ -1,16 +1,16 @@
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 public class Main {
-    public static void main(String[] args) {
-        try {
+    public static void main(String[] args) throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+
             com.formdev.flatlaf.intellijthemes.FlatArcDarkIJTheme.setup();
-        } catch (NoClassDefFoundError e){
-            JOptionPane.showMessageDialog(new JFrame("Info"), "flatlaf plugin not found");
-        }
-        finally {
             GuiCalculator guiCalculator = new GuiCalculator();
-        }
+            guiCalculator.setVisible(true);
+
+
+
 
 
 
