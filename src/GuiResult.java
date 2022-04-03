@@ -8,34 +8,33 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class GuiResult extends JFrame implements ActionListener  {
-    private int h = 600;
-    private int w = 1000;
-
-    JLabel title = new JLabel();
-    JLabel result = new JLabel();
 
     GuiResult(double results) {
+
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         InputStream input = classLoader.getResourceAsStream("logo.png");
         InputStream input2 = classLoader.getResourceAsStream("heart.png");
 
-
-
         BufferedImage image = null;
         BufferedImage image2 = null;
         try {
+            assert input != null;
             image = ImageIO.read(input);
+            assert input2 != null;
             image2 = ImageIO.read(input2);
 
         } catch (IOException e) {
             e.printStackTrace();
         }
+        assert image != null;
         Image newimg = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
         ImageIcon icon = new ImageIcon(newimg);
 
+        assert image2 != null;
         Image newimg2 = image2.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
         ImageIcon icon2 = new ImageIcon(newimg2);
 
+        JLabel title = new JLabel();
         title.setText("Calculator");
         title.setFont(new Font("Arial", Font.BOLD,20));
         title.setIcon(icon);
@@ -44,6 +43,7 @@ public class GuiResult extends JFrame implements ActionListener  {
         title.setHorizontalTextPosition(JLabel.RIGHT);
         title.setVerticalTextPosition(JLabel.CENTER);
 
+        JLabel result = new JLabel();
         result.setText(String.valueOf(results));
         result.setIcon(icon2);
         result.setFont(new Font("Arial", Font.BOLD,20));
@@ -51,7 +51,6 @@ public class GuiResult extends JFrame implements ActionListener  {
         result.setVerticalAlignment(JLabel.CENTER);
         result.setHorizontalTextPosition(JLabel.RIGHT);
         result.setVerticalTextPosition(JLabel.CENTER);
-
 
         this.setTitle("Calculator");
         this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
@@ -61,30 +60,19 @@ public class GuiResult extends JFrame implements ActionListener  {
         this.setIconImage(image);
         this.add(title);
         this.add(result);
+        this.setLocationRelativeTo(null);
         this.setVisible(true);
 
     }
 
-
-
     public int getH() {
-        return h;
+        return 600;
     }
-
     public int getW() {
-        return w;
+        return 1000;
     }
-
-
-
-
-
-
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
-
-
     }
 }

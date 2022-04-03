@@ -18,3 +18,21 @@ Heute habe ich mit dem berechnen angefangen:
 - gefixxt 
 - resultat gui angefangen
 
+---
+## 02/04/2022
+- added GuiArmor, GuiWeapon
+- added new grafics
+- added laf
+- changed layout
+
+
+---
+## 03/04/2022
+- fixed problem with calculation
+- added getter setter
+- updated laf
+- renamed variables
+- reformatted code
+- optimised code
+- added error handling for nullpointer
+

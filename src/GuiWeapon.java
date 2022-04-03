@@ -9,11 +9,7 @@ import java.io.InputStream;
 
 public class GuiWeapon extends JFrame {
 
-    private double damage;
-
-    JLabel title = new JLabel();
-    JPanel mainpanel = new JPanel();
-
+    private double damage = 0;
 
     GuiWeapon(){
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
@@ -25,22 +21,29 @@ public class GuiWeapon extends JFrame {
         BufferedImage image1 = null;
         BufferedImage image2 = null;
         try {
+            assert input != null;
             image = ImageIO.read(input);
+            assert input1 != null;
             image1 = ImageIO.read(input1);
+            assert input2 != null;
             image2 = ImageIO.read(input2);
         } catch (
             IOException e) {
             e.printStackTrace();
         }
+        assert image != null;
         Image newimg = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
         ImageIcon icon = new ImageIcon(newimg);
 
+        assert image1 != null;
         Image newimg1 = image1.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
         ImageIcon icon1 = new ImageIcon(newimg1);
 
+        assert image2 != null;
         Image newimg2 = image2.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
         ImageIcon icon2 = new ImageIcon(newimg2);
 
+        JLabel title = new JLabel();
         title.setText("Weapons");
         title.setFont(new Font("Arial", Font.BOLD,20));
         title.setIcon(icon1);
@@ -48,10 +51,6 @@ public class GuiWeapon extends JFrame {
         title.setVerticalAlignment(JLabel.CENTER);
         title.setHorizontalTextPosition(JLabel.RIGHT);
         title.setVerticalTextPosition(JLabel.CENTER);
-
-
-
-
 
         String[] weapons = {"WoodSword", "StoneSword", "IronSword", "GoldSword", "DiamondSword","NetheriteSword"};
 
@@ -72,7 +71,7 @@ public class GuiWeapon extends JFrame {
         JButton submit = new JButton();
         submit.setText("submit");
 
-
+        JPanel mainpanel = new JPanel();
         mainpanel.setLayout(new GridLayout(1,3,30,30));
         mainpanel.add(select, BorderLayout.CENTER);
         mainpanel.add(centerlabel);
@@ -81,14 +80,14 @@ public class GuiWeapon extends JFrame {
 
         this.setTitle("Weapons");
         this.setIconImage(image);
-        this.setSize(800,600);
+        this.setSize(1000,600);
         this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         this.setLayout(new BorderLayout(10,100));
         this.setResizable(false);
         this.add(title, BorderLayout.NORTH);
         this.add(mainpanel, BorderLayout.CENTER);
         this.add(submit, BorderLayout.SOUTH);
-
+        this.setLocationRelativeTo(null);
 
         submit.addActionListener(new ActionListener() {
             @Override
@@ -97,10 +96,8 @@ public class GuiWeapon extends JFrame {
                 int enchant1 = (Integer) enchant.getValue();
 
                 Weapon w1 = new Weapon(sword1,enchant1);
-                    setDamage(w1.getDamage());
+                setDamage(w1.getDamage());
                 dispose();
-
-
             }
         });
     }
