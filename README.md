@@ -20,15 +20,15 @@ Choose Weapon, Shaprness level as well as armor and protection level. Press calc
 ![img.png](images/img.png)
 
 # 1.4 How to Install
-lorem ipsum lorem ipsum lorem ipsum
+
+Download the latest Reales and execute it with this command:
 ```
-no install :)
+java -jar [filename].jar
 ```
 
-lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+
 # 1.5 Feature we may add
-- [x] lorem ipsum lorem ipsum lorem ipsum lorem ipsum l
-- [x] lorem ipsum lorem ipsum lorem ipsum lorem ipsum 
-- [ ] lorem ipsum lorem ipsum lorem ipsum lorem ipsum 
-- [ ] lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-- [ ] lorem ipsum lorem ipsum lorem ipsum lorem ipsum 
+- [ ] Diffrent armor types
+- [ ] axes
+- [ ] potion effects
+- [ ] more damage details
