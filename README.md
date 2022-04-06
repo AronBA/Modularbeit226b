@@ -1,7 +1,4 @@
 # 1.1 Modularbeit226b Overview
-
-**Overview written by Aron Baur**
-
 ## Contents
 
 ```
@@ -32,3 +29,7 @@ java -jar [filename].jar
 - [ ] axes
 - [ ] potion effects
 - [ ] more damage details
+
+
+
+###### Overview written by Aron Baur
