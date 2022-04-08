@@ -7,9 +7,10 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class GuiWeapon extends JFrame {
+public class GuiWeapon extends Gui {
 
     private double damage = 0;
+    private double attackspeed = 0;
 
     GuiWeapon(){
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
@@ -52,7 +53,7 @@ public class GuiWeapon extends JFrame {
         title.setHorizontalTextPosition(JLabel.RIGHT);
         title.setVerticalTextPosition(JLabel.CENTER);
 
-        String[] weapons = {"WoodSword", "StoneSword", "IronSword", "GoldSword", "DiamondSword","NetheriteSword"};
+        String[] weapons = {"WoodSword", "StoneSword", "IronSword", "GoldSword", "DiamondSword","NetheriteSword","WoodenAxe","GoldAxe","StoneAxe","IronAxe","DiamondAxe","NetheriteAxe"};
 
         JComboBox<String> select = new JComboBox<>(weapons);
         select.setFont(new Font("Arial", Font.BOLD,20));
@@ -80,7 +81,7 @@ public class GuiWeapon extends JFrame {
 
         this.setTitle("Weapons");
         this.setIconImage(image);
-        this.setSize(1000,600);
+        this.setSize(getWidth(),getHeight());
         this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         this.setLayout(new BorderLayout(10,100));
         this.setResizable(false);
@@ -97,6 +98,7 @@ public class GuiWeapon extends JFrame {
 
                 Weapon w1 = new Weapon(sword1,enchant1);
                 setDamage(w1.getDamage());
+                setAttackspeed(w1.getAttackspeed());
                 dispose();
             }
         });
@@ -106,7 +108,14 @@ public class GuiWeapon extends JFrame {
         this.damage = damage;
     }
 
+    public void setAttackspeed(double attackspeed) {
+        this.attackspeed = attackspeed;
+    }
+
     public double getDamage() {
         return damage;
+    }
+    public double getAtackspeed(){
+        return attackspeed;
     }
 }

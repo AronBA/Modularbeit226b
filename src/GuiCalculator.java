@@ -8,7 +8,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class GuiCalculator extends JFrame implements ActionListener{
+public class GuiCalculator extends Gui{
 
     private GuiWeapon guiWeapon;
     private GuiArmor guiArmor;
@@ -95,7 +95,7 @@ public class GuiCalculator extends JFrame implements ActionListener{
         this.setTitle("Calculator");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(new BorderLayout(100,170));
-        this.setSize(getW(), getH());
+        this.setSize(getWidth(), getHeight());
         this.setResizable(false);
         this.setIconImage(image);
         this.setLocationRelativeTo(null);
@@ -132,21 +132,12 @@ public class GuiCalculator extends JFrame implements ActionListener{
             public void actionPerformed(ActionEvent e) {
 
                 try{
-                    Calculation c1 = new Calculation(getGuiWeapon().getDamage(),getGuiArmor().getDefensepoints(),getGuiArmor().getToughness(),getGuiArmor().getProtection());
+                    Calculation c1 = new Calculation(getGuiWeapon().getDamage(),getGuiArmor().getDefensepoints(),getGuiArmor().getToughness(),getGuiArmor().getProtection(),getGuiWeapon().getAtackspeed());
                 } catch (NullPointerException exception){
                     JOptionPane.showMessageDialog(new JFrame(), "Please choose weapon and armor","Warning", JOptionPane.WARNING_MESSAGE);
                 }
             }
         });
-    }
-
-
-    public int getH() {
-        return 600;
-    }
-
-    public int getW() {
-        return 1000;
     }
 
     public GuiArmor getGuiArmor() {
@@ -163,10 +154,5 @@ public class GuiCalculator extends JFrame implements ActionListener{
 
     public void setGuiWeapon(GuiWeapon guiWeapon) {
         this.guiWeapon = guiWeapon;
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-
     }
 }

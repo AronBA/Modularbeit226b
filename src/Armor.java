@@ -2,13 +2,14 @@ import java.util.Objects;
 
 public class Armor {
 
-    private double toughness;
-    private double protectionlvl;
-    private double defensepoints;
+    private final double toughness;
+    private final double protectionlvl;
+    private final double defensepoints;
 
     public Armor(String armor, double protectionlvl) {
 
-        toughness = 0;
+        double toughness = 0;
+        double defensepoints = 0;
         if (Objects.equals(armor, "LeatherArmor")) {
             defensepoints = 7;
         }
@@ -24,6 +25,9 @@ public class Armor {
         } else if (armor.equals("NetheriteArmor")){
             defensepoints = 20;
             toughness = 12;
+        } else if (armor.equals("noArmor")){
+            toughness = 0;
+            defensepoints = 0;
         }
 
         this.defensepoints = defensepoints;

@@ -7,7 +7,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class GuiArmor extends JFrame {
+public class GuiArmor extends Gui {
 
     private double protection = 0;
     private double defensepoints = 0;
@@ -82,7 +82,7 @@ public class GuiArmor extends JFrame {
 
         this.setTitle("Armor");
         this.setIconImage(image);
-        this.setSize(1000,600);
+        this.setSize(getWidth(),getHeight());
         this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         this.setLayout(new BorderLayout(10,100));
         this.setResizable(false);
