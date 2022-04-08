@@ -1,7 +1,4 @@
 # 1.1 Modularbeit226b Overview
-
-**Overview written by Aron Baur**
-
 ## Contents
 
 ```
@@ -21,7 +18,7 @@ Choose Weapon, Shaprness level as well as armor and protection level. Press calc
 
 # 1.4 How to Install
 
-Download the latest Reales and execute it with this command:
+Download the latest Release and execute it with this command:
 ```
 java -jar [filename].jar
 ```
@@ -32,3 +29,7 @@ java -jar [filename].jar
 - [ ] axes
 - [ ] potion effects
 - [ ] more damage details
+
+
+
+###### Overview written by Aron Baur
