@@ -3,8 +3,8 @@
     <output-path>$PROJECT_DIR$/out/artifacts/m226b_jar</output-path>
     <root id="archive" name="m226b.jar">
       <element id="module-output" name="m226b" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/resources/flatlaf-2.1.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/resources/flatlaf-intellij-themes-2.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/resources/flatlaf-2.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/resources/flatlaf-intellij-themes-2.1.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
