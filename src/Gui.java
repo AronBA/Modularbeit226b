@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 
 public class Gui extends JFrame implements ActionListener {
 
+
     @Override
     public void actionPerformed(ActionEvent e) {
 
@@ -18,4 +19,5 @@ public class Gui extends JFrame implements ActionListener {
     public int getWidth() {
         return 1000;
     }
+
 }
