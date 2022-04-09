@@ -6,7 +6,6 @@
 1.2 Introduction
 1.3 How to use 
 1.4 How to Install
-1.5 Features We may add
 ```
 # 1.2 Introduction
 This project is a Minecraft damage calculator. Written in Java for a school project. There is a docs folder with school related documents (german).
@@ -24,11 +23,7 @@ java -jar [filename].jar
 ```
 
 
-# 1.5 Feature we may add
-- [ ] Diffrent armor types
-- [ ] axes
-- [ ] potion effects
-- [ ] more damage details
+
 
 
 
