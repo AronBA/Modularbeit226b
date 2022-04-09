@@ -1,4 +1,3 @@
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -7,6 +6,10 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
+
+/**
+ * This Class inherits the Gui Class. Its used to Display the Calculator Gui.
+ **/
 
 public class GuiCalculator extends Gui{
 

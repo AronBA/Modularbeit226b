@@ -40,6 +40,8 @@ Heute habe ich mit dem berechnen angefangen, ich musste zuerst mich Informieren 
 - Code Commentieren
 - äxte hinzugefügt
 - mehr details bei dem resultat (dps,hit to deaths)
-- 
 
-
+---
+## 09/04/2022
+- refractoring
+- journal überarbeiten

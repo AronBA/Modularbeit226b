@@ -7,6 +7,10 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
 
+/**
+ * This Class inherits the Gui Class. Its used to Display the Armor Selection Gui.
+ **/
+
 public class GuiArmor extends Gui {
 
     private double protection = 0;
@@ -20,6 +24,9 @@ public class GuiArmor extends Gui {
 
 
     GuiArmor(){
+
+        //ClassLoader is used to load all the Images from the Resource Folder.
+
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         InputStream input = classLoader.getResourceAsStream("logo.png");
         InputStream input1 = classLoader.getResourceAsStream("chest.png");
@@ -39,9 +46,10 @@ public class GuiArmor extends Gui {
                 IOException e) {
             e.printStackTrace();
         }
+
+        //Resizing the Images
         assert image != null;
         Image newimg = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
-        ImageIcon icon = new ImageIcon(newimg);
 
         assert image1 != null;
         Image newimg1 = image1.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
@@ -51,6 +59,10 @@ public class GuiArmor extends Gui {
         Image newimg2 = image2.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
         ImageIcon icon2 = new ImageIcon(newimg2);
 
+
+
+
+        //Title JLabel
         JLabel title = new JLabel();
         title.setText("Weapons");
         title.setFont(new Font("Arial", Font.BOLD,20));
@@ -60,12 +72,13 @@ public class GuiArmor extends Gui {
         title.setHorizontalTextPosition(JLabel.RIGHT);
         title.setVerticalTextPosition(JLabel.CENTER);
 
+        //Title JLabel
         select.setFont(new Font("Arial", Font.BOLD,20));
-
         enchant.setFont(new Font("Arial", Font.BOLD,20));
-
+        //Title JLabel
         JButton submit = new JButton("submit");
 
+        //Center JLabel
         JLabel centerlabel = new JLabel();
         centerlabel.setFont(new Font("Arial", Font.BOLD,20));
         centerlabel.setText("Protection Level");
@@ -73,6 +86,7 @@ public class GuiArmor extends Gui {
         centerlabel.setHorizontalAlignment(JLabel.CENTER);
         centerlabel.setVerticalAlignment(JLabel.CENTER);
 
+        //Title JLabel
         JPanel mainpanel = new JPanel();
         mainpanel.setLayout(new GridLayout(1,3,30,30));
         mainpanel.add(select, BorderLayout.CENTER);
@@ -80,6 +94,7 @@ public class GuiArmor extends Gui {
         mainpanel.add(enchant, BorderLayout.SOUTH);
         mainpanel.setVisible(true);
 
+        //Title JLabel
         this.setTitle("Armor");
         this.setIconImage(image);
         this.setSize(getWidth(),getHeight());
@@ -91,6 +106,7 @@ public class GuiArmor extends Gui {
         this.add(submit, BorderLayout.SOUTH);
         this.setLocationRelativeTo(null);
 
+        // This ActionListener creates a new Armor Class which converts all Selected Items into Values. It also gets via the getter the Values from the Armor Class. Finally it disposes the Window.
 
         submit.addActionListener(new ActionListener() {
             @Override

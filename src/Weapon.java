@@ -1,5 +1,9 @@
 import java.util.Objects;
 
+/**
+ * This Class converts the GUI input into numbers wich can be used for the Calculation
+ **/
+
 public class Weapon {
 
     private final int sharpnesslvl;

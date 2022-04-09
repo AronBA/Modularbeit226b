@@ -1,5 +1,7 @@
 import java.util.Objects;
-
+/**
+ * This Class converts the GUI input into numbers wich can be used for the Calculation
+ **/
 public class Armor {
 
     private final double toughness;
@@ -10,10 +12,10 @@ public class Armor {
 
         double toughness = 0;
         double defensepoints = 0;
+
         if (Objects.equals(armor, "LeatherArmor")) {
             defensepoints = 7;
-        }
-        else if (armor.equals("ChainmailArmor")){
+        }else if (armor.equals("ChainmailArmor")){
             defensepoints = 11;
         }else if (armor.equals("IronArmor")){
             defensepoints = 12;
@@ -34,6 +36,7 @@ public class Armor {
         this.protectionlvl = protectionlvl;
         this.toughness = toughness;
     }
+
 
     public double getToughness() {
         return toughness;

@@ -7,6 +7,10 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
 
+/**
+ * This Class inherits the Gui Class. Its used to Display the Weapon Selection Gui.
+ **/
+
 public class GuiWeapon extends Gui {
 
     private double damage = 0;

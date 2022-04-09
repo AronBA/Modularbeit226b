@@ -1,10 +1,13 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
+
+/**
+ * This Class inherits the Gui Class. Its used to Display the Result Gui.
+ **/
 
 public class GuiResult extends Gui {
 
@@ -18,9 +21,6 @@ public class GuiResult extends Gui {
         try {
             assert input != null;
             image = ImageIO.read(input);
-
-
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -51,7 +51,7 @@ public class GuiResult extends Gui {
 
 
 
-            this.setTitle("Calculator");
+        this.setTitle("Calculator");
         this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         this.setLayout(new GridLayout(3,1,20,20));
         this.setSize(getWidth(), getHeight());
