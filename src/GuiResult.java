@@ -40,16 +40,11 @@ public class GuiResult extends Gui {
         title.setVerticalTextPosition(JLabel.CENTER);
 
 
-
         String result[][]={ {damage + " ♡", crit  + " ♡", String.valueOf(minhittodeath), String.valueOf(maxhittodeath), mindps + " ♡", maxdps + " ♡"}};
-
-        String column[]={"Damage(Flat)","Damage(Crit)","min Hits until Death","max Hits until Death","min Dps","max Dps"};
+        String column[]={"Damage(Flat)","Damage(Crit)","max Hits until Death","min Hits until Death","min Dps","max Dps"};
         JTable resulttable =new JTable(result,column);
-        resulttable.setBounds(30,40,150,200)
-        ;
+        resulttable.setBounds(30,40,150,200);
         JScrollPane resultpane = new JScrollPane(resulttable);
-
-
 
         this.setTitle("Calculator");
         this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);

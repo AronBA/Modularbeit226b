@@ -11,7 +11,7 @@ public class Calculation {
         double result = Math.round(total * 2.0) / 4.0;
 
         //This formular calculates the damage if the player crits.
-        double crit = Math.floor(result * 1.5);
+        double crit = result * 1.5;
 
         //This formular calculates the minimal and maximal hits until a player dies.
         double minhits = 10 / result;
