@@ -17,6 +17,7 @@ public class GuiWeapon extends Gui {
     private double attackspeed = 0;
 
     GuiWeapon(){
+        // class loader is used for loading the images from the resource folder
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         InputStream input = classLoader.getResourceAsStream("logo.png");
         InputStream input1 = classLoader.getResourceAsStream("sword.png");
@@ -36,9 +37,7 @@ public class GuiWeapon extends Gui {
             IOException e) {
             e.printStackTrace();
         }
-        assert image != null;
-        Image newimg = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
-        ImageIcon icon = new ImageIcon(newimg);
+        //resizing of the images
 
         assert image1 != null;
         Image newimg1 = image1.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
@@ -48,6 +47,7 @@ public class GuiWeapon extends Gui {
         Image newimg2 = image2.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
         ImageIcon icon2 = new ImageIcon(newimg2);
 
+        //creating the title
         JLabel title = new JLabel();
         title.setText("Weapons");
         title.setFont(new Font("Arial", Font.BOLD,20));
@@ -66,6 +66,7 @@ public class GuiWeapon extends Gui {
         JSpinner enchant = new JSpinner(value);
         enchant.setFont(new Font("Arial", Font.BOLD,20));
 
+        //The Center label is the label in the center rof the gui
         JLabel centerlabel = new JLabel();
         centerlabel.setFont(new Font("Arial", Font.BOLD,20));
         centerlabel.setText("Sharpness Level");
@@ -73,9 +74,11 @@ public class GuiWeapon extends Gui {
         centerlabel.setHorizontalAlignment(JLabel.CENTER);
         centerlabel.setVerticalAlignment(JLabel.CENTER);
 
+        //The Center label is the label in the center of the gui
         JButton submit = new JButton();
         submit.setText("submit");
 
+        //the mainpanel object is a JPanel with a Gridlayout. All the main components of the UI are added here for a better Layout
         JPanel mainpanel = new JPanel();
         mainpanel.setLayout(new GridLayout(1,3,30,30));
         mainpanel.add(select, BorderLayout.CENTER);
@@ -83,6 +86,7 @@ public class GuiWeapon extends Gui {
         mainpanel.add(enchant, BorderLayout.SOUTH);
         mainpanel.setVisible(true);
 
+        //here is the gui Defined. Its using a Borderlayout, with the mainpanel in the center, the title on the top and the submitbutton on the bottom
         this.setTitle("Weapons");
         this.setIconImage(image);
         this.setSize(getWidth(),getHeight());
@@ -94,6 +98,8 @@ public class GuiWeapon extends Gui {
         this.add(submit, BorderLayout.SOUTH);
         this.setLocationRelativeTo(null);
 
+
+        // This ActionListener creates a new weapon Class which converts all Selected Items into Values. It also gets via the getter the Values from the weapon Class. Finally it disposes the Window.
         submit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

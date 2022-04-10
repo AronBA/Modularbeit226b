@@ -22,9 +22,4 @@ Download the latest Release and execute it with this command:
 java -jar [filename].jar
 ```
 
-
-
-
-
-
 ###### Overview written by Aron Baur

@@ -9,11 +9,14 @@ public class Weapon {
     private final int sharpnesslvl;
     private final String sword;
 
+
     public Weapon(String sword, int sharpness) {
         this.sword = sword;
         this.sharpnesslvl = sharpness;
     }
 
+
+    //funtion is used to get the flat base damage of each selected item
     public double getDamage(){
 
         int basedamage = 0;
@@ -43,6 +46,7 @@ public class Weapon {
         }
         return damage;
     }
+    //function is used to determine the attackspeed of each weapon
     public double getAttackspeed(){
         double attackspeed = 0;
 
@@ -55,7 +59,6 @@ public class Weapon {
         }else if (sword.equals("GoldAxe") || sword.equals("DiamondAxe") ||sword.equals("NetheriteAxe")){
             attackspeed = 1;
         }
-
         return attackspeed;
     }
 }

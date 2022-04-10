@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * This Class inherits the Gui Class. Its used to Display the Calculator Gui.
+ * This Class inherits the Gui Class. Its used to Display the main Calculator Gui.
  **/
 
 public class GuiCalculator extends Gui{
@@ -16,6 +16,7 @@ public class GuiCalculator extends Gui{
     private GuiWeapon guiWeapon;
     private GuiArmor guiArmor;
 
+    //important objects like the label or the panel are defined here.
     JLabel title = new JLabel();
     JPanel mainpanel = new JPanel();
     JButton weapon = new JButton();
@@ -24,6 +25,7 @@ public class GuiCalculator extends Gui{
 
     GuiCalculator() {
 
+        //the class loader is used to load all the images from the resource folder
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         InputStream input = classLoader.getResourceAsStream("logo.png");
         InputStream input1 = classLoader.getResourceAsStream("sword.png");
@@ -47,6 +49,7 @@ public class GuiCalculator extends Gui{
         } catch (IOException e) {
             e.printStackTrace();
         }
+        //resizing of the images
         assert image != null;
         Image newimg = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
         ImageIcon icon = new ImageIcon(newimg);
@@ -63,6 +66,7 @@ public class GuiCalculator extends Gui{
         Image newimg3 = image3.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
         ImageIcon icon3 = new ImageIcon(newimg3);
 
+        //the title label is defined here
         title.setText("Calculator");
         title.setFont(new Font("Arial", Font.BOLD,20));
         title.setIcon(icon);
@@ -71,14 +75,17 @@ public class GuiCalculator extends Gui{
         title.setHorizontalTextPosition(JLabel.RIGHT);
         title.setVerticalTextPosition(JLabel.CENTER);
 
+        //the weapon label is defined here
         weapon.setFont(new Font("Arial", Font.BOLD,20));
         weapon.setText("Weapon");
         weapon.setIcon(icon1);
 
+        //the armor label is defined here
         armor.setFont(new Font("Arial", Font.BOLD,20));
         armor.setText("Armor");
         armor.setIcon(icon2);
 
+        //the arrow label (the on in the center of the screen) is defined here
         arrow.setFont(new Font("Arial", Font.BOLD,20));
         arrow.setText("Attacks");
         arrow.setIcon(icon3);
@@ -86,6 +93,7 @@ public class GuiCalculator extends Gui{
         arrow.setHorizontalAlignment(JLabel.CENTER);
         arrow.setVerticalAlignment(JLabel.CENTER);
 
+        //the main panel is defined here. It has a gridlayout for an easy layout
         mainpanel.setLayout(new GridLayout(1,2,30,30));
         mainpanel.add(weapon);
         mainpanel.add(arrow);
@@ -95,6 +103,7 @@ public class GuiCalculator extends Gui{
         JButton submit = new JButton();
         submit.setText("Calculate");
 
+        //here is the gui Defined. Its using a Borderlayout, with the mainpanel in the center, the title on the top and the submitbutton on the bottom as well as two Separators on each side.
         this.setTitle("Calculator");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(new BorderLayout(100,170));
@@ -110,6 +119,7 @@ public class GuiCalculator extends Gui{
         this.add(mainpanel, BorderLayout.CENTER);
 
 
+        //action listener which shows to armor gui.
         armor.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -120,6 +130,7 @@ public class GuiCalculator extends Gui{
             }
         });
 
+        //action listener which shows to weapon gui.
         weapon.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -130,6 +141,7 @@ public class GuiCalculator extends Gui{
             }
         });
 
+        //action listener which calculates the result. If nothing is choosen it will create a little warning message.
         submit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -143,6 +155,7 @@ public class GuiCalculator extends Gui{
         });
     }
 
+    //getter and setter for the class
     public GuiArmor getGuiArmor() {
         return guiArmor;
     }

@@ -17,6 +17,7 @@ public class GuiArmor extends Gui {
     private double defensepoints = 0;
     private double toughness = 0;
 
+    //important objects like the Spinner or the Combobox are defined here.
     private final SpinnerModel  value = new SpinnerNumberModel(0,0,5,1);
     private final JSpinner enchant = new JSpinner(value);
     private final String[] armors = {"noArmor","LeatherArmor", "ChainmailArmor", "IronArmor", "GoldArmor", "DiamondArmor","NetheriteArmor"};
@@ -26,7 +27,6 @@ public class GuiArmor extends Gui {
     GuiArmor(){
 
         //ClassLoader is used to load all the Images from the Resource Folder.
-
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         InputStream input = classLoader.getResourceAsStream("logo.png");
         InputStream input1 = classLoader.getResourceAsStream("chest.png");
@@ -62,7 +62,7 @@ public class GuiArmor extends Gui {
 
 
 
-        //Title JLabel
+        //the title object is used for displaying the titel on the GUi
         JLabel title = new JLabel();
         title.setText("Weapons");
         title.setFont(new Font("Arial", Font.BOLD,20));
@@ -72,13 +72,14 @@ public class GuiArmor extends Gui {
         title.setHorizontalTextPosition(JLabel.RIGHT);
         title.setVerticalTextPosition(JLabel.CENTER);
 
-        //Title JLabel
+        ///set the font for the select and the enchant
         select.setFont(new Font("Arial", Font.BOLD,20));
         enchant.setFont(new Font("Arial", Font.BOLD,20));
-        //Title JLabel
+
+        //The Center label is the label in the center rof the gui
         JButton submit = new JButton("submit");
 
-        //Center JLabel
+        //The Center label is the label in the center rof the gui
         JLabel centerlabel = new JLabel();
         centerlabel.setFont(new Font("Arial", Font.BOLD,20));
         centerlabel.setText("Protection Level");
@@ -86,7 +87,7 @@ public class GuiArmor extends Gui {
         centerlabel.setHorizontalAlignment(JLabel.CENTER);
         centerlabel.setVerticalAlignment(JLabel.CENTER);
 
-        //Title JLabel
+        //the mainpanel object is a JPanel with a Gridlayout. All the main components of the UI are added here for a better Layout
         JPanel mainpanel = new JPanel();
         mainpanel.setLayout(new GridLayout(1,3,30,30));
         mainpanel.add(select, BorderLayout.CENTER);
@@ -94,7 +95,7 @@ public class GuiArmor extends Gui {
         mainpanel.add(enchant, BorderLayout.SOUTH);
         mainpanel.setVisible(true);
 
-        //Title JLabel
+        //here is the gui Defined. Its using a Borderlayout, with the mainpanel in the center, the title on the top and the submitbutton on the bottom
         this.setTitle("Armor");
         this.setIconImage(image);
         this.setSize(getWidth(),getHeight());
@@ -119,12 +120,12 @@ public class GuiArmor extends Gui {
                 setToughness(w1.getToughness());
                 setProtection(w1.getProtectionlvl());
                 setDefensepoints(w1.getDefensepoints());
-
                 dispose();
             }
         });
     }
 
+    //getter and setter of the GuiArmor Class
     public double getToughness() {
         return toughness;
     }
